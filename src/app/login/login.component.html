@@ -1,0 +1,35 @@
+<!-- <h2>Login de usuario</h2>
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+
+</form>
+<button class="btn btn-info" (click)="onClick()">Login With Google</button> -->
+
+<div class="container" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 25px;">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Welcome</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter your email</mat-label>
+          <input matInput type="text" class="form-control" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" style="margin-left: 20px;">
+          <mat-label>Enter your password</mat-label>
+          <input matInput type="password" class="form-control" formControlName="password">
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-raised-button color="primary" type="submit" value="Enviar">Log in</button>
+      <button mat-raised-button color="accent" class="button-spacer" type="submit" (click)="onClick()">Login With Google</button>
+    </form>
+  </mat-card>
+</div>

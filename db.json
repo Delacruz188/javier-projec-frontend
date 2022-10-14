@@ -1,0 +1,22 @@
+{
+  "productList": [
+    {
+      "productName": "FirstTest",
+      "category": "vegetables",
+      "freshness": "Second hand",
+      "price": 259,
+      "comment": "test",
+      "date": "0100-01-01T06:36:36.000Z",
+      "id": 1
+    },
+    {
+      "productName": "Mango",
+      "category": "fruits",
+      "freshness": "Brand new",
+      "price": 28,
+      "comment": "Rico como yo",
+      "date": "2022-09-30T05:00:00.000Z",
+      "id": 3
+    }
+  ]
+}

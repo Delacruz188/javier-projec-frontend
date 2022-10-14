@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span>Proyecto Carlos De La Cruz</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>supervised_user_circle</mat-icon>
+  </button>
+
+  <button (click)="onClick()" mat-icon-button class="btn btn-outline-danger mt-5">
+    <mat-icon>highlight_off</mat-icon>
+  </button>
+  <button mat-raised-button color="basic" class="button-spacer" (click)="openDialog()">Add Product</button>
+</mat-toolbar>
+
+<div class="container">
+  <app-products-table></app-products-table>
+</div>
+
+

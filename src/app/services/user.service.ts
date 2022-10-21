@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, authState, user } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private auth: Auth) { }
+  constructor(private auth: Auth) {
+
+    authState(this.auth).subscribe(res => {
+      console.log(res);
+    })
+
+    user(this.auth).subscribe(res => {
+      console.log(res?.email);
+    })
+  }
 
   register({ email, password }: any) {
     return createUserWithEmailAndPassword(this.auth, email, password);
@@ -24,4 +33,16 @@ export class UserService {
     return signOut(this.auth);
   }
 
+  async getUid() {
+    const currentUser:any = await this.auth.currentUser;
+    if (currentUser === null) {
+      return null;
+    } else {
+      return currentUser.identifier;
+    }
+  }
+
+  async getEmail() {
+    return await this.auth
+  }
 }

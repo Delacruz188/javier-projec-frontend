@@ -1,5 +1,5 @@
-<h2>Registro de usuario</h2>
-<form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+<!-- <h2>Registro de usuario</h2>
+
     <div class="mb-3">
         <label class="form-label">Email</label>
         <input type="text" class="form-control" formControlName="email">
@@ -8,5 +8,26 @@
         <label class="form-label">Password</label>
         <input type="password" class="form-control" formControlName="password">
     </div>
-    <input type="submit" value="Enviar">
-</form>
+
+</form> -->
+
+<div class="container" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 25px;">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>This is the register site!</mat-card-title>
+      </mat-card-header>
+      <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter your email</mat-label>
+            <input matInput type="text" class="form-control" formControlName="email">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" style="margin-left: 20px;">
+            <mat-label>Enter your password</mat-label>
+            <input matInput type="password" class="form-control" formControlName="password">
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-raised-button color="primary" type="submit" value="Enviar">Register</button>
+      </form>
+    </mat-card>
+  </div>

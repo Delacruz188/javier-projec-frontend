@@ -6,7 +6,7 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
 
@@ -25,13 +25,18 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
+  async onSubmit() {
+
     this.userService.register(this.formReg.value)
       .then(response => {
         console.log(response);
+        alert("New user registered");
         this.router.navigate(['/login']);
       })
       .catch(error => console.log(error));
+
+      const uid = await this.userService.getUid();
+
   }
 
 }

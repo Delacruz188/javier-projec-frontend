@@ -19,15 +19,22 @@ export class MainComponent implements OnInit {
     private dialog: MatDialog
   ) { }
 
-  ngOnInit(): void {
+  userEmail:any;
+
+  async ngOnInit() {
+
+    const uid = await this.userService.getUid();
+
+
   }
 
-  onClick() {
-    this.userService.logout()
-      .then(() => {
-        this.router.navigate(['/login']);
-      })
-      .catch(error => console.log(error));
+  async onClick() {
+    console.log(await this.userService.getEmail());
+    // this.userService.logout()
+    // .then(() => {
+    //   this.router.navigate(['/login']);
+    // })
+    // .catch(error => console.log(error));
   }
 
   title = 'javier-projec-frontend';

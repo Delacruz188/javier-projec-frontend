@@ -5,11 +5,20 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-products-table',
   templateUrl: './products-table.component.html',
-  styleUrls: ['./products-table.component.scss']
+  styleUrls: ['./products-table.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class ProductsTableComponent implements OnInit {
 
@@ -70,4 +79,5 @@ export class ProductsTableComponent implements OnInit {
     }
   })
   }
+
 }
